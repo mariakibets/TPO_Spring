@@ -1,0 +1,8 @@
+Create a user management app. Use Spring Data and an H2 Database to create a repository
+for the User entity (id, username, password, email). The "id" is automatically generated on db side.
+Fill out the table with some initial data.
+
+Create an API controller to handle GET and POST requests for receiving user with a given id,
+and other function is for receiving user with a username (proceed on db side).
+Adding new users and getting a list of users.
+Also check uniqueness of username and email. And check if email is correct.

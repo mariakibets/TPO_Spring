@@ -1,0 +1,1 @@
+http://localhost:8080/current-time?timezone=America/New_York&format=DD-MM-YYYY%20hh:mm

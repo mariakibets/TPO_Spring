@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to home page</h1>
+    <h2>Choose the option of the operation</h2>
+
+    <div>
+    <a th:href="@{/school/courses}">Show all courses</a>
+    </div>
+
+    <div>
+    <a th:href="@{/school/teachers}">Show all teachers</a>
+     </div>
+
+    <div>
+    <form th:action="@{/school/teacher/{id}(id=${teacherId})}" method="get">
+        <label for="teacherId">Get a specific Teacher by ID:</label>
+        <input type="text" id="teacherId" name="teacherId" th:value="${teacherId}" />
+        <button type="submit">Go</button>
+    </form>
+    </div>
+
+    <div>
+    <form th:action="@{/school/course/{id}(id=${courseId})}" method="get">
+        <label for="courseId">Get a specific Course by ID:</label>
+        <input type="text" id="courseId" name="courseId" th:value="${courseId}" />
+        <button type="submit">Go</button>
+    </form>
+    </div>
+
+
+<!--    <div>-->
+<!--        <form th:action="@{/school/delete/teacher/{id}(id=${courseId})}" method="get">-->
+<!--            <label for="courseId">Get a specific Course by ID:</label>-->
+<!--            <input type="text" id="" name="courseId" th:value="${courseId}" />-->
+<!--            <button type="submit">Go</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+
+<!--    <div>-->
+<!--        <form th:action="@{/school/course/{id}(id=${courseId})}" method="get">-->
+<!--            <label for="courseId">Get a specific Course by ID:</label>-->
+<!--            <input type="text" id="courseId" name="courseId" th:value="${courseId}" />-->
+<!--            <button type="submit">Go</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+
+
+</body>
+</html>

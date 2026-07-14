@@ -1,0 +1,41 @@
+body {
+    background-color: pink;
+}
+
+textarea {
+    border-color: purple;
+    color: purple;
+}
+
+h2 {
+    color: purple;
+}
+
+h1 {
+    text-align: center;
+    color: hotpink;
+}
+
+
+.result-textarea {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 350px;
+    height: 150px
+}
+
+
+button {
+    color: pink;
+    background-color: purple;
+}
+
+button:hover{
+    background-color: plum;
+    color: wheat
+}
+
+p {
+    color: red;
+    text-align: center
+}

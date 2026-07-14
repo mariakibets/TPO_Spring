@@ -1,0 +1,9 @@
+Create an app for managing payments. Use Spring Data and H2 db to create a repository for
+the payment entity (id, orderId, amount, paymentDate).
+Create an MVC Controller to retrieve payment info (by id and orderId),
+add new payments, and get a list of payments sorted by amount (sorting on db side).
+Add validation to ensure that amount is positive value and paymentDate in the future.
+
+Create home page that will display a list of payments (show only id) in the form of links.
+The links redirect to dedicated pages where detailed data about the selected payment.
+Also create a payment registration form in Thymeleaf. The form: orderId, amount, paymentDate. Use th:object.

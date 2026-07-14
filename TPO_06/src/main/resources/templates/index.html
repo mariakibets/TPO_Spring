@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Test Data Generator</title>
+    <style>
+        body { font-family: Arial; margin: 2em; }
+        h1 {color: purple}
+        table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+        th, td { border: 3px solid purple; padding: 8px; text-align: left; }
+        th { background-color: pink; }
+        .error { color: red; margin-top: 1em; }
+    </style>
+</head>
+<body>
+<h1>Test Data Generator</h1>
+<form th:action="@{/generate}" method="post">
+    <label>Number of entries:
+        <input type="number" name="count" min="0" required />
+<!--        I made min 0 here to show the error-->
+    </label>
+    <br><br>
+
+    <label>Language:
+        <select name="language">
+            <option th:each="lang : ${languages}" th:value="${lang}" th:text="${lang}"></option>
+        </select>
+    </label>
+    <br><br>
+
+    <label><input type="checkbox" name="fields" value="address" /> Address</label>
+    <label><input type="checkbox" name="fields" value="university" /> University</label>
+    <label><input type="checkbox" name="fields" value="countryOfOrigin" /> Country of Origin</label>
+    <label><input type="checkbox" name="fields" value="jobTitle" /> Job Title</label>
+    <label><input type="checkbox" name="fields" value="phoneNumber" /> Phone</label>
+    <label><input type="checkbox" name="fields" value="email" /> Email</label>
+    <label><input type="checkbox" name="fields" value="hobby" /> Hobby</label>
+    <label><input type="checkbox" name="fields" value="company" /> Company</label>
+
+    <br><br>
+    <button type="submit">Generate</button>
+</form>
+
+<div class="error" th:if="${error}" th:text="${error}"></div>
+
+<table th:if="${people}">
+    <thead>
+    <tr>
+        <th th:text="${labels['firstName']}"></th>
+        <th th:text="${labels['lastName']}"></th>
+        <th th:text="${labels['dateOfBirth']}"></th>
+        <th th:if="${fields != null and fields.contains('address')}", th:text="${labels['address']}">Address</th>
+        <th th:if="${fields != null and fields.contains('university')}", th:text="${labels['university']}" >University</th>
+        <th th:if="${fields != null and fields.contains('countryOfOrigin')}", th:text="${labels['countryOfOrigin']}">Country</th>
+        <th th:if="${fields != null and fields.contains('jobTitle')}", th:text="${labels['jobTitle']}">Job</th>
+        <th th:if="${fields != null and fields.contains('phoneNumber')}", th:text="${labels['phoneNumber']}">Phone</th>
+        <th th:if="${fields != null and fields.contains('email')}", th:text="${labels['email']}">Email</th>
+        <th th:if="${fields != null and fields.contains('hobby')}", th:text="${labels['hobby']}">Hobby</th>
+        <th th:if="${fields != null and fields.contains('company')}", th:text="${labels['company']}">Company</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${people}">
+        <td th:text="${person.firstName}"></td>
+        <td th:text="${person.lastName}"></td>
+        <td th:text="${person.dateOfBirth}"></td>
+        <td th:if="${fields != null and fields.contains('address')}" th:text="${person.address}"></td>
+        <td th:if="${fields != null and fields.contains('university')}" th:text="${person.university}"></td>
+        <td th:if="${fields != null and fields.contains('countryOfOrigin')}" th:text="${person.countryOfOrigin}"></td>
+        <td th:if="${fields != null and fields.contains('jobTitle')}" th:text="${person.jobTitle}"></td>
+        <td th:if="${fields != null and fields.contains('phoneNumber')}" th:text="${person.phoneNumber}"></td>
+        <td th:if="${fields != null and fields.contains('email')}" th:text="${person.email}"></td>
+        <td th:if="${fields != null and fields.contains('hobby')}" th:text="${person.hobby}"></td>
+        <td th:if="${fields != null and fields.contains('company')}" th:text="${person.company}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

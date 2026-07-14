@@ -1,0 +1,7 @@
+User ↔ Role (0.. to 0..)** → Many-to-Many Relationship
+
+User ↔ Article (0..1 to 0..*) → One-to-Many Relationship
+
+User ↔ Blog (0..1 to 0..1) → One-to-One Relationship
+
+Blog ↔ Article (0..1 to 0..*) → One-to-Many Relationship

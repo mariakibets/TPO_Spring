@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Payment Details</title>
+</head>
+<body>
+<h2>Payment Details</h2>
+
+<div th:if="${payment != null}">
+    <p>Id: <span th:text="${payment.id}"></span></p>
+    <p>Order ID: <span th:text="${payment.orderId}"></span></p>
+    <p>Amount: <span th:text="${payment.amount}"></span></p>
+    <p>Payment Date: <span th:text="${payment.paymentDate}"></span></p>
+</div>
+<div th:if="${payment == null}">
+    <p>Payment not found.</p>
+</div>
+
+<a th:href="@{/payment/home}">Back to home</a>
+</body>
+</html>

@@ -1,0 +1,3 @@
+A Publisher can publish many Books → One-to-Many
+
+A Book can have multiple Authors, and an Author can write multiple Books → Many-to-Many

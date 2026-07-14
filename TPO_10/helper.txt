@@ -1,0 +1,7 @@
+{
+  "name": "PJAIT",
+  "targetUrl": "https://pja.edu.pl/",
+  "password": "iloveTPO11$"
+}
+
+iloveTPO11$$$1$

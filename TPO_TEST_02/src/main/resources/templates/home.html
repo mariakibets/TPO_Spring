@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>Payment List</h2>
+    <ul>
+        <li th:each="payment : ${payments}">
+            <a th:href="@{/payment/id/{id}(id=${payment.id})}" th:text="${payment.id}"></a>
+
+        </li>
+    </ul>
+    <a th:href="@{/payment/create}">Add new payment</a>
+</body>
+</html>

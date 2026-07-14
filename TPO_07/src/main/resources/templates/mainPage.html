@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title layout:fragment="myTitle">Code Formatter</title>
+</head>
+<body>
+<section layout:fragment="content" class="container mt-5">
+    <h2 class="text-primary">Code Formatter</h2>
+
+    <form th:action="@{/format}" method="post">
+        <div class="mb-3">
+            <textarea name="code" class="form-control" rows="10" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label>ID:</label>
+            <input type="text" name="id" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Duration (sec):</label>
+            <input type="number" name="time" min="10" max="7776000" required class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Format</button>
+    </form>
+
+    <h2 class="text-primary mt-5">Find Code by ID</h2>
+    <form th:action="@{/find}" method="get">
+        <div class="mb-3">
+            <label>ID:</label>
+            <input type="text" name="id" required class="form-control">
+        </div>
+        <button type="submit" class="btn btn-secondary">Find</button>
+    </form>
+</section>
+</body>
+</html>

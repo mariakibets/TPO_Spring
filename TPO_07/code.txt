@@ -1,0 +1,9 @@
+public class Test {public static void main(String[] args){System.out.println("Hello World");}}
+
+public class Sum{public static void main(String[] args){int num1=15,num2=25;int sum=num1+num2;System.out.println("The sum is: "+sum);}}
+
+
+public class Greet{public static void main(String[] args){String name="Alice";System.out.println("Hello "+name+"!");}}
+
+
+public class HelloWorld{public static void main(String[] args){String message="Hello, Java!";System.out.println(message);}}

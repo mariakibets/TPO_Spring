@@ -1,0 +1,10 @@
+INSERT INTO role (id, name) VALUES (1, 'ADMINISTRATOR');
+INSERT INTO role (id, name) VALUES (2, 'LIBRARIAN');
+INSERT INTO role (id, name) VALUES (3, 'PUBLISHER');
+INSERT INTO role (id, name) VALUES (4, 'READER');
+INSERT INTO role (id, name) VALUES (5, 'UNREGISTERED_USER');
+
+
+
+INSERT INTO book (ID, PRICE, TITLE, PUBLISHER_PUBLISHER_ID)
+VALUES (1, 29.99, 'The Great Gatsby', 1);

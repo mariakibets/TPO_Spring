@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Link Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h2>Link Details</h2>
+    <div>
+        <h5 class="card-title" th:text="'ID: ' + ${link.id}">ID</h5>
+        <h5 class="card-title" th:text="'Name: ' + ${link.name}">Name</h5>
+        <p class="card-text">
+            Target URL: <a th:href="${link.targetURL}" th:text="${link.targetURL}"></a>
+        </p>
+        <p class="card-text">
+            Redirect URL: <a th:href="${link.redirectUrl}" th:text="${link.redirectUrl}" ></a>
+        </p>
+        <p class="card-text">
+            Visits: <a th:href="${link.visits}" th:text="${link.visits}" ></a>
+        </p>
+    </div>
+
+<a href="/create" class="btn btn-secondary mt-3">Back</a>
+<a th:href="@{/edit/{id}(id=${link.id})}" class="btn btn-primary mt-3 ms-2">Edit</a>
+
+<form th:action="@{/delete/{id}(id=${link.id})}" method="post">
+    <input type="password" name="password" placeholder="Enter password to delete" required />
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+</body>
+</html>
